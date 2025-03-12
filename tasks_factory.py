@@ -27,7 +27,9 @@ class TasksFactory:
 
         expected_output = task_config["expected_output"]
         if "{output_schema}" in expected_output and output_schema is not None:
-            expected_output = expected_output.format(output_schema=output_schema)
+            expected_output = expected_output.format(
+                output_schema=output_schema
+            )
 
         return Task(
             description=dedent(description),
