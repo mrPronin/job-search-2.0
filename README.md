@@ -21,6 +21,7 @@ A list of additions, improvements and modifications is provided below.
 
 ## TODO
 - [x] use "openai/gpt-4o-mini" instead of Azure hosted solution
+- [ ] use CrewAI decorators (@CrewBase, @agent and @task), create entities from conig/*.yml
 
 ## Installation
 
