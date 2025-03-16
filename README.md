@@ -19,6 +19,9 @@ A list of additions, improvements and modifications is provided below.
 - **`agents_factory.py` and `tasks_factory.py`**: These scripts implement factory patterns to efficiently create instances as per the configuration specified.
 - **`main.py`**: The main script that serves as the entry point, bringing together various components and driving the application.
 
+## TODO
+- [x] use "openai/gpt-4o-mini" instead of Azure hosted solution
+
 ## Installation
 
 To set up this project locally, follow these steps:
@@ -68,3 +71,4 @@ To set up this project locally, follow these steps:
 9. Run the application
    ```bash
     python main.py
+    ```
