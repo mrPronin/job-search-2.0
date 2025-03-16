@@ -20,11 +20,12 @@ A list of additions, improvements and modifications is provided below.
 - **`main.py`**: The main script that serves as the entry point, bringing together various components and driving the application.
 
 ## TODO
-- [x] use "openai/gpt-4o-mini" instead of Azure hosted solution
-- [x] update installation section, fix existign issues, use virtual environment
-- [ ] use CrewAI decorators (@CrewBase, @agent and @task), create entities from conig/*.yml
-- [ ] update job_search_expert to use a real source of positions (Ln)
-- [ ] try to use local llama3.2 for some tasks
+- [x] feat: use "openai/gpt-4o-mini" instead of Azure hosted solution
+- [x] doc: update installation section, fix existign issues, use virtual environment
+- [x] fix: adjust evaluate_company task description
+- [ ] feat: update job_search_expert to use a real source of positions (Ln)
+- [ ] refactor: use CrewAI decorators (@CrewBase, @agent and @task), create entities from conig/*.yml
+- [ ] feat: try to use local llama3.2 for some tasks
 
 ## Installation
 
