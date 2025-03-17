@@ -29,6 +29,9 @@ A list of additions, improvements and modifications is provided below.
 - [x] build: use poetry for dependency management
 - [x] refactor: update project structure with src in root
 - [ ] feat: update job_search_expert to use a real source of positions (Ln)
+   - [ ] feat: define Driver to wrap selenium
+   - [ ] feat: define LinkedInClient to find positions
+   - [ ] feat: define LinkedInTool to retreive positions
 - [ ] refactor: use CrewAI decorators (@CrewBase, @agent and @task), create entities from conig/*.yml
 - [ ] feat: try to use local llama3.2 for some tasks
 
