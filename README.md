@@ -26,8 +26,9 @@ A list of additions, improvements and modifications is provided below.
 - [x] feat: use "openai/gpt-4o-mini" instead of Azure hosted solution
 - [x] doc: update installation section, fix existign issues, use virtual environment
 - [x] fix: adjust evaluate_company task description
+- [x] build: use poetry for dependency management
+- [x] refactor: update project structure with src in root
 - [ ] feat: update job_search_expert to use a real source of positions (Ln)
-- [ ] build: use poetry or uv for dependency management
 - [ ] refactor: use CrewAI decorators (@CrewBase, @agent and @task), create entities from conig/*.yml
 - [ ] feat: try to use local llama3.2 for some tasks
 
