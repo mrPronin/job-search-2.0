@@ -12,6 +12,7 @@ selenium = "^4.21.0"
 [tool.poetry.scripts]
 job_search = "job_search.main:run"
 train = "job_search.main:train"
+lama_test = "job_search.demo.lama_format_test:run_dog_demo"
 
 [build-system]
 requires = ["poetry-core"]
