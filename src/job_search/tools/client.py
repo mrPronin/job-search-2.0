@@ -23,15 +23,15 @@ class Client:
     def find_people(self, skills):
         skills = skills.split(",")
         search = " ".join(skills)
-        
+
         # Use quote_plus instead of quote to properly encode spaces as %20
         encoded_string = urllib.parse.quote_plus(search.lower())
-        
+
         # Print the URL for debugging
         base_url = "https://www.linkedin.com/search/results/people/"
         url = f"{base_url}?keywords={encoded_string}"
         print(f"Navigating to URL: {url}")
-        
+
         self.driver.navigate(url)
 
         people = self.driver.get_elements("ul li div div.linked-area")
@@ -40,7 +40,7 @@ class Client:
         for person in people:
             try:
                 result = {}
-                
+
                 # Get name
                 name_selector = (
                     "a[data-test-app-aware-link] "
@@ -50,7 +50,7 @@ class Client:
                     By.CSS_SELECTOR,
                     name_selector
                 ).text.strip()
-                
+
                 # Get position
                 try:
                     # Using XPath to find the position element
@@ -64,7 +64,7 @@ class Client:
                     result["position"] = position_element.text.strip()
                 except Exception:
                     result["position"] = "Position not found"
-                
+
                 # Get location by looking at the second t-14 t-normal div
                 try:
                     # Using XPath to find the location element
@@ -79,7 +79,7 @@ class Client:
                     result["location"] = location_element.text.strip()
                 except Exception:
                     result["location"] = "Location not found"
-                
+
                 # Get profile link which is more reliable
                 result["profile_link"] = person.find_element(
                     By.CSS_SELECTOR,
