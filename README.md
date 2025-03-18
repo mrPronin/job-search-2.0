@@ -30,6 +30,7 @@ A list of additions, improvements and modifications is provided below.
 - [x] refactor: update project structure with src in root
 - [ ] feat: update job_search_expert to use a real source of positions (Ln)
    - [x] feat: define Driver to wrap selenium
+   - [x] feat: automatically fetch Linkedin auth cookie
    - [ ] feat: define LinkedInClient to find positions
    - [ ] feat: define LinkedInTool to retreive positions
 - [ ] refactor: use CrewAI decorators (@CrewBase, @agent and @task), create entities from conig/*.yml
