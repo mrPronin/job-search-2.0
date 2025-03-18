@@ -8,12 +8,14 @@ authors = ["Oleksandr Pronin <pronin.alx@gmail.com>"]
 python = ">=3.10,<=3.13"
 crewai = { extras = ["tools"], version = "^0.85.0" }
 selenium = "^4.21.0"
+browser-cookie3 = "^0.20.1"
 
 [tool.poetry.scripts]
 job_search = "job_search.main:run"
 train = "job_search.main:train"
 lama_test = "job_search.demo.lama_format_test:run_dog_demo"
 find_people = "job_search.demo.find_people:run"
+get_cookies = "job_search.demo.get_cookies:run"
 
 [build-system]
 requires = ["poetry-core"]

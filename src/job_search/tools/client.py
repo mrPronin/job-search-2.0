@@ -1,6 +1,6 @@
-import os
 import urllib
 from selenium.webdriver.common.by import By
+import browser_cookie3
 
 from .driver import Driver
 
@@ -8,14 +8,45 @@ from .driver import Driver
 class Client:
 
     def __init__(self):
-        url = "https://linkedin.com/"
+        domain = "linkedin.com"
+        url = f"https://{domain}/"
+        cookie_name = "li_at"
+        cookie_value = self.getCookiesFromDomain(domain, cookie_name)
         cookie = {
-            "name": "li_at",
-            "value": os.environ["LINKEDIN_COOKIE"],
-            "domain": ".linkedin.com",
+            "name": cookie_name,
+            "value": cookie_value,
+            "domain": f".{domain}",
         }
 
         self.driver = Driver(url, cookie)
+
+    @staticmethod
+    def getCookiesFromDomain(domain, cookieName=""):
+        """
+        Get cookies from Firefox browser for a specific domain.
+
+        Args:
+            domain: The domain to extract cookies for
+            cookieName: Specific cookie name to extract (optional)
+
+        Returns:
+            Dictionary of cookies or a specific cookie value
+        """
+        Cookies = {}
+        cookiesList = list(browser_cookie3.firefox())
+
+        for cookie in cookiesList:
+            if domain in cookie.domain:
+                # print (cookie.name, cookie.domain,cookie.value)
+                Cookies[cookie.name] = cookie.value
+
+        if cookieName != "":
+            try:
+                return Cookies[cookieName]  # return specified cookie
+            except KeyError:
+                return {}  # if cookie not found return an empty dictionary
+        else:
+            return Cookies  # return all cookies or nothing
 
     def find_positions(self, skills):
         pass
